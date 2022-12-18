@@ -1,4 +1,4 @@
-package ru.otus.hw.les08;
+package ru.otus.hw.les08.arrays;
 
 import java.util.Arrays;
 

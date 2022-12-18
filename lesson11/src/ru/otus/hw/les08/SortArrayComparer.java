@@ -1,16 +1,14 @@
 package ru.otus.hw.les08;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
+import ru.otus.hw.les08.arrays.*;
+
 import java.util.Date;
 
-public class SortComparer {
+public class SortArrayComparer {
     static final int SAMPLE_SIZE = 2000000;
     static final boolean SHOW_RESULT = false;
 
     public static void main(String[] args) {
-        int[] vals;
         ArraySorter sorter;
         System.out.println("Размер сэмпла: " + SAMPLE_SIZE);
         System.out.printf("Отладочный вывод %s\n", SHOW_RESULT ? "включен" : "выключен");

@@ -1,4 +1,4 @@
-package ru.otus.hw.les08;
+package ru.otus.hw.les08.arrays;
 
 public class BubleArraySorter implements ArraySorter {
     @Override

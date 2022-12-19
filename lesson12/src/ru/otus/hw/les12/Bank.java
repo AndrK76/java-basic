@@ -45,7 +45,7 @@ public class Bank {
      * @return добавленный клиент
      */
     public Client addClient(Client client) {
-        if (clients.containsKey(client)) {
+        if (clients.containsKey(client.getId())) {
             throw new IllegalArgumentException("Клиент с Id=" + client.getId() + " уже есть");
         }
         clients.put(client.getId(), client);

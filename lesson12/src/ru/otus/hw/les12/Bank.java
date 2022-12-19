@@ -1,22 +1,23 @@
 package ru.otus.hw.les12;
 
-import java.util.Collection;
-import java.util.TreeMap;
-import java.util.UUID;
+import java.util.*;
 
 /**
  * Банк
  */
 public class Bank {
-    private final TreeMap<UUID, Client> clients;
-    private final TreeMap<UUID, Account> accounts;
+    //Можно было HashMap<Client,Client>
+    //В C# использовал бы скорее всего Dictionary<UUID,Client> либо при работе с БД List<Client>
+    //В PL*SQL что-то типа Table of Что-то index by varchar2(20) - при условии что нужна работа в памяти а не с таблицами
+    private final HashMap<UUID,Client> clients;
+    private final HashMap<UUID,Account> accounts;
 
     /**
      * Создать банк
      */
     public Bank() {
-        clients = new TreeMap<>();
-        accounts = new TreeMap<>();
+        clients = new HashMap<>();
+        accounts = new HashMap<>();
     }
 
     /**
@@ -44,7 +45,7 @@ public class Bank {
      * @return добавленный клиент
      */
     public Client addClient(Client client) {
-        if (clients.containsKey(client.getId())) {
+        if (clients.containsKey(client)) {
             throw new IllegalArgumentException("Клиент с Id=" + client.getId() + " уже есть");
         }
         clients.put(client.getId(), client);

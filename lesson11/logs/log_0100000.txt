@@ -1,0 +1,16 @@
+Размер сэмпла: 100000
+Отладочный вывод выключен
+
+Сортировка "Пузырьком"
+ start init sample... sample inited, start sorting
+Sorting Complete, Sorting time: 24000 ms
+
+Встроенный алгоритм сортировки
+ start init sample... sample inited, start sorting
+Sorting Complete, Sorting time: 62 ms
+
+Пирамидальная сортировка
+ start init sample... sample inited, start sorting
+Sorting Complete, Sorting time: 26 ms
+
+Process finished with exit code 0

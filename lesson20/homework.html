@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Студенты</title>
+    <style>
+        h1,
+        h2,
+        h3 {
+            color: steelblue;
+        }
+
+        .content-block {
+            width: 800px;
+            margin-left: 20px;
+        }
+
+        .input-item {
+            width: 300px;
+        }
+
+        .div-box {
+            padding: 3px 0;
+            box-sizing: inherit;
+            vertical-align: baseline;
+        }
+
+        .div-box label {
+            display: block;
+        }
+
+        pre {
+            border: 1px solid steelblue;
+            width: 300px;
+            min-height: 50px;
+        }
+
+        .result-table {
+            border: 1px solid steelblue;
+            border-collapse: collapse;
+            width: 600px;
+        }
+
+        .result-table tr td,
+        th {
+            border: 1px solid steelblue;
+            padding-left: 5px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        .valid-value {
+            color: inherit;
+            background-color: inherit;
+            border: none;
+        }
+
+        .invalid-value {
+            color: crimson;
+            background-color: yellow;
+            border: 1px solid steelblue;
+        }
+
+        .center-halign-cell {
+            text-align: center;
+        }
+
+        .right-halign-cell {
+            text-align: right;
+            padding-right: 10px;
+        }
+    </style>
+
+    <script>
+        let sexValies = { "male": "Мужской", "female": "Женский" };
+
+        function initPage() {
+            const sexInputItem = document.getElementById('sexInputItem');
+            for (let key in sexValies) {
+                sexInputItem.appendChild(new Option(sexValies[key], key));
+            }
+        }
+
+        function addStudent() {
+            const nameInputItem = document.getElementById('nameInputItem');
+            const nameValidationItem = document.getElementById('nameValidationItem');
+            const sexInputItem = document.getElementById('sexInputItem');
+            const birthdayInputItem = document.getElementById('birthdayInputItem');
+            const birthdayValidationItem = document.getElementById('birthdayValidationItem');
+            const name = nameInputItem.value;
+            let canAdd = true;
+            if (name === '') {
+                nameValidationItem.classList = "invalid-value";
+                nameValidationItem.innerText = 'Введите имя!!!!';
+                canAdd = false;
+            } else {
+                nameValidationItem.classList = "valid-value";
+                nameValidationItem.innerText = '';
+            }
+            const birthday = birthdayInputItem.value;
+            if (birthday === '') {
+                birthdayValidationItem.classList = "invalid-value";
+                birthdayValidationItem.innerText = 'Выберите дату рождения!!!!';
+                canAdd = false;
+            } else {
+                const birthdayDate = new Date(birthday);
+                if (birthdayDate > new Date()) {
+                    birthdayValidationItem.classList = "invalid-value";
+                    birthdayValidationItem.innerText = 'Дата рождения не может быть больше текущей даты!!!!';
+                    canAdd = false;
+                } else {
+                    birthdayValidationItem.classList = "valid-value";
+                    birthdayValidationItem.innerText = '';
+                }
+            }
+            if (canAdd) {
+                const resultTableBody = document.getElementById('resultTable').tBodies[0];
+                const rowCount = resultTableBody.rows.length;
+                const newRow = resultTableBody.insertRow(rowCount);
+                var newCell = newRow.insertCell(0);
+                newCell.innerText = name;
+                newCell = newRow.insertCell(1);
+                newCell.innerText = sexValies[sexInputItem.value];
+                newCell.classList = "center-halign-cell";
+                const birthdayDate = new Date(birthday);
+                const dateFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+                newCell = newRow.insertCell(2);
+                newCell.innerText = birthdayDate.toLocaleDateString('ru-RU', dateFormatOptions);
+                newCell.classList = "center-halign-cell";
+                const age = new Date(new Date() - birthdayDate).getFullYear() - 1970;
+                newCell = newRow.insertCell(3);
+                newCell.innerText = age;
+                newCell.classList = "right-halign-cell";
+                let totalAge = 0;
+                for (let i = 0; i < resultTableBody.rows.length; i++) {
+                    totalAge = totalAge + parseInt(resultTableBody.rows[i].cells[3].innerText, 10);
+                }
+                document.getElementById('celAvgAge').innerText = Math.round(totalAge / resultTableBody.rows.length);
+            }
+        }
+    </script>
+</head>
+
+<body onload="initPage();">
+    <h1>Список студентов</h1>
+    <div id="inputArea" class="input-form, content-block">
+        <div class="div-box">
+            <label for="nameInputItem">Имя:</label>
+            <input id="nameInputItem" type="text" class="input-item" />
+            <span id="nameValidationItem"></span>
+        </div>
+        <div class="div-box">
+            <label for="sexInputItem">Пол:</label>
+            <select id="sexInputItem" class="input-item" />
+            </select>
+        </div>
+        <div class="div-box">
+            <label for="birthdayInputItem">Дата рождения:</label>
+            <input id="birthdayInputItem" type="date" class="input-item" />
+            <span id="birthdayValidationItem"></span>
+        </div>
+        <div class="div-box">
+            <input type="button" value="Добавить" class="input-item" onclick="addStudent();" />
+        </div>
+    </div>
+    <hr />
+    <div id="outputArea">
+        <table id="resultTable" class="result-table">
+            <thead>
+                <tr>
+                    <th>Имя студента</th>
+                    <th>Пол</th>
+                    <th>Дата рождения</th>
+                    <th>Возраст</th>
+                </tr>
+            </thead>
+            <tbody />
+            <tfoot>
+                <tr>
+                    <td colspan="4"></td>
+                </tr>
+                <tr>
+                    <td colspan="3">Средний возраст студентов:</td>
+                    <td id="celAvgAge" class="right-halign-cell">&nbsp;</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</body>
+
+</html>

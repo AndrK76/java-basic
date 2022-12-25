@@ -12,6 +12,7 @@ import java.util.Map;
 public class RubleConverterTests {
     private static final String testGroup = "Тесты конвертера рублей";
 
+
     public void testNegativeValue() {
         String scenario = testGroup + ": Тест с отрицательным значением";
         try {
@@ -25,9 +26,9 @@ public class RubleConverterTests {
     }
 
     public void testValidValues() {
-        String scenario = testGroup + ": Тест с отрицательным значением";
+        String scenario = testGroup + ": Тест с валидным значением";
         try {
-            Map<Integer, String> values = new HashMap<Integer, String>() {{
+            Map<Integer, String> values = new HashMap<>() {{
                 put(0, "0 рублей");
                 put(1, "1 рубль");
                 put(2, "2 рубля");
@@ -43,7 +44,7 @@ public class RubleConverterTests {
                 put(22, "22 рубля");
                 put(25, "25 рублей");
                 put(100, "100 рублей");
-                put(100, "101 рубль");
+                put(101, "101 рубль");
                 put(1000, "1000 рублей");
                 put(1001, "1001 рубль");
             }};

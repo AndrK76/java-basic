@@ -7,7 +7,7 @@ public interface Converter {
     /**
      * Показать число с добавлением единиц
      * @param value число
-     * @return число с добавлением единиц изменерения
+     * @return число с добавлением единиц измерения
      */
     String showAsNumberString(int value);
 

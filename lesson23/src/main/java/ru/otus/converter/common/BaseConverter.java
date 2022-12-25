@@ -23,6 +23,12 @@ public abstract class BaseConverter implements Converter {
         int valueForSuffixRange = value % 10;
         SuffixRange suffixRange = SuffixRange.getRange(valueForSuffixRange);
         String suffix = caseSuffixes.get(suffixRange);
+
+        //Для значений 11 .. 19 - всегда берём значение во множественном числе
+        int remainder100 = value % 100;
+        if (remainder100 > 10 & remainder100 < 20){
+            suffix = caseSuffixes.get(SuffixRange.MANY);
+        }
         return String.format("%d %s", value, suffix);
     }
 

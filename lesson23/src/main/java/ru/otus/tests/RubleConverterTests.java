@@ -52,6 +52,7 @@ public class RubleConverterTests {
             for (var val : values.keySet()) {
                 Assertions.assertEquals(values.get(val), converter.showAsNumberString(val));
             }
+            System.out.printf("\"%s\" passed %n", scenario);
         } catch (Throwable e) {
             System.err.printf("\"%s\" fails with message \"%s\" %n", scenario, e.getMessage());
         }

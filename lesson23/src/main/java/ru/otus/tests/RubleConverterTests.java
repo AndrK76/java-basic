@@ -1,17 +1,13 @@
 package ru.otus.tests;
 
-import ru.otus.converter.console.ConsoleIOService;
 import ru.otus.converter.interfaces.Converter;
 import ru.otus.converter.ruble.RubleConverter;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
 public class RubleConverterTests {
     private static final String testGroup = "Тесты конвертера рублей";
-
 
     public void testNegativeValue() {
         String scenario = testGroup + ": Тест с отрицательным значением";

@@ -1,0 +1,12 @@
+D:\Java\jdk-17.0.5\bin\java.exe "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\lib\idea_rt.jar=52574:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\bin" -Dfile.encoding=UTF-8 -classpath D:\Doc\JavaBasic\homework\lesson23\out\production\lesson23;D:\Doc\JavaBasic\homework\lesson23\lib\annotations-23.0.0.jar ru.otus.AppTests
+"Тесты сервиса ввода/вывода: Тест вывода строки" passed
+"Тесты сервиса ввода/вывода:Тест форматированного вывода строки" passed
+"Тест чтения строки" passed
+"Тесты конвертера рублей: Тест с отрицательным значением" passed
+"Тесты конвертера рублей: Тест с валидным значением" passed
+"Тесты преобразования значения в строку: Тест с отрицательным значением" fails with message "Given code does not throw any exception"
+"Тесты преобразования значения в строку: Тест значений для единиц мужского рода" fails with message "Expected "ноль" = """
+"Тесты преобразования значения в строку: Тест значений для единиц женского рода" fails with message "Expected "ноль" = """
+"Тесты преобразования значения в строку: Тест значений для единиц среднего рода" fails with message "Expected "ноль" = """
+
+Process finished with exit code 0

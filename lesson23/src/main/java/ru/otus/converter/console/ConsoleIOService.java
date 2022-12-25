@@ -1,5 +1,7 @@
 package ru.otus.converter.console;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import ru.otus.converter.interfaces.IOService;
 
 import java.io.InputStream;
@@ -15,10 +17,15 @@ public class ConsoleIOService implements IOService {
     private final PrintStream out;
     private final Scanner in;
 
-    public ConsoleIOService(InputStream in, OutputStream out) {
-        this.out = new PrintStream(out);
+    public ConsoleIOService(@NotNull InputStream in, @Nullable OutputStream out) {
         this.in = new Scanner(in);
+        if (out != null) {
+            this.out = new PrintStream(out);
+        } else {
+            this.out = null;
+        }
     }
+
 
     /**
      * Вывести строку
@@ -27,7 +34,7 @@ public class ConsoleIOService implements IOService {
      */
     @Override
     public void outputStr(String s) {
-
+        out.printf("%s%n", s);
     }
 
     /**
@@ -38,7 +45,7 @@ public class ConsoleIOService implements IOService {
      */
     @Override
     public void outputStr(String template, Object... args) {
-
+        out.printf(template + "%n", args);
     }
 
     /**
@@ -48,7 +55,7 @@ public class ConsoleIOService implements IOService {
      */
     @Override
     public String readString() {
-        return null;
+        return in.nextLine();
     }
 
 

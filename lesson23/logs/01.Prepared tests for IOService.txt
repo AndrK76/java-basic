@@ -1,0 +1,8 @@
+D:\Java\jdk-17.0.5\bin\java.exe "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\lib\idea_rt.jar=50609:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\bin" -Dfile.encoding=UTF-8 -classpath D:\Doc\JavaBasic\homework\lesson23\out\production\lesson23 ru.otus.AppTests
+"Тесты сервиса ввода/вывода: Тест вывода строки" fails with message "Expected "Тестовая строка для вывода
+" = """
+"Тесты сервиса ввода/вывода:Тест форматированного вывода строки" fails with message "Expected "Курс ОТУС Java Basic: 2022
+" = """
+"Тест чтения строки" fails with message "Null output stream"
+
+Process finished with exit code 0

@@ -1,0 +1,8 @@
+D:\Java\jdk-17.0.5\bin\java.exe "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\lib\idea_rt.jar=51817:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\bin" -Dfile.encoding=UTF-8 -classpath D:\Doc\JavaBasic\homework\lesson23\out\production\lesson23;D:\Doc\JavaBasic\homework\lesson23\lib\annotations-23.0.0.jar ru.otus.AppTests
+"Тесты сервиса ввода/вывода: Тест вывода строки" passed
+"Тесты сервиса ввода/вывода:Тест форматированного вывода строки" passed
+"Тест чтения строки" passed
+"Тесты конвертера рублей: Тест с отрицательным значением" passed
+"Тесты конвертера рублей: Тест с валидным значением" passed
+
+Process finished with exit code 0

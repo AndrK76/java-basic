@@ -2,7 +2,7 @@ package ru.otus;
 
 import ru.otus.tests.ConsoleServiceTest;
 import ru.otus.tests.RubleConverterTests;
-import ru.otus.tests.ValuesStringerTest;
+import ru.otus.tests.RussianValuesStringerTest;
 
 public class AppTests {
     public static void main(String[] args) {
@@ -25,9 +25,9 @@ public class AppTests {
 
     public static void testValueStringers()
     {
-        new ValuesStringerTest().testNegativeValue();
-        new ValuesStringerTest().testMaleUnitValues();
-        new ValuesStringerTest().testFemaleUnitValues();
-        new ValuesStringerTest().testMiddleUnitValues();
+        new RussianValuesStringerTest().testNegativeValue();
+        new RussianValuesStringerTest().testMaleUnitValues();
+        new RussianValuesStringerTest().testFemaleUnitValues();
+        new RussianValuesStringerTest().testMiddleUnitValues();
     }
 }

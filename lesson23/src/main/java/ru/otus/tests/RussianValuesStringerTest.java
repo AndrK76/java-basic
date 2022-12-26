@@ -2,18 +2,20 @@ package ru.otus.tests;
 
 import ru.otus.converter.common.UnitGender;
 import ru.otus.converter.common.ValueStringer;
+import ru.otus.converter.valuestringer_rus.RussianValueStringer;
 
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class ValuesStringerTest {
+public class RussianValuesStringerTest {
     private static final String testGroup = "Тесты преобразования значения в строку";
 
     public void testNegativeValue() {
         String scenario = testGroup + ": Тест с отрицательным значением";
         try {
-            Assertions.assertThrows(IllegalArgumentException.class, () -> ValueStringer.getString(-1, UnitGender.MIDDLE));
+            ValueStringer russianValueStringer = new RussianValueStringer();
+            Assertions.assertThrows(IllegalArgumentException.class, () -> russianValueStringer.getString(-1, UnitGender.MIDDLE));
 
             System.out.printf("\"%s\" passed %n", scenario);
         } catch (Throwable e) {
@@ -48,8 +50,9 @@ public class ValuesStringerTest {
                 put(1000000000, "один миллиард");
                 put(1021000012, "один миллиард двадцать один миллион двенадцать");
             }};
+            RussianValueStringer russianValueStringer = new RussianValueStringer();
             for (var val : values.keySet()) {
-                Assertions.assertEquals(values.get(val), ValueStringer.getString(val, UnitGender.MALE));
+                Assertions.assertEquals(values.get(val), russianValueStringer.getString(val, UnitGender.MALE));
             }
             System.out.printf("\"%s\" passed %n", scenario);
         } catch (Throwable e) {
@@ -74,8 +77,9 @@ public class ValuesStringerTest {
                 put(1101, "одна тысяча сто одна");
                 put(1292, "одна тысяча двести девяносто две");
             }};
+            ValueStringer russianValueStringer = new RussianValueStringer();
             for (var val : values.keySet()) {
-                Assertions.assertEquals(values.get(val), ValueStringer.getString(val, UnitGender.FEMALE));
+                Assertions.assertEquals(values.get(val), russianValueStringer.getString(val, UnitGender.FEMALE));
             }
             System.out.printf("\"%s\" passed %n", scenario);
         } catch (Throwable e) {
@@ -100,8 +104,9 @@ public class ValuesStringerTest {
                 put(1101, "одна тысяча сто одно");
                 put(1292, "одна тысяча двести девяносто два");
             }};
+            ValueStringer russianValueStringer = new RussianValueStringer();
             for (var val : values.keySet()) {
-                Assertions.assertEquals(values.get(val), ValueStringer.getString(val, UnitGender.MIDDLE));
+                Assertions.assertEquals(values.get(val), russianValueStringer.getString(val, UnitGender.MIDDLE));
             }
             System.out.printf("\"%s\" passed %n", scenario);
         } catch (Throwable e) {

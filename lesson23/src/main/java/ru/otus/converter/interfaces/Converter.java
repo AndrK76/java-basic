@@ -17,4 +17,11 @@ public interface Converter {
      * @return число прописью с добавлением единиц
      */
     String showAsString(int value);
+
+    /**
+     * Показать суффикс для числа
+     * @param value Значение
+     * @return Суффикс для числа
+     */
+    String showSuffix(int value);
 }

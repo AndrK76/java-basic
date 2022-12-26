@@ -1,7 +1,14 @@
 package ru.otus.converter.common;
 
-public class ValueStringer {
-    public static String getString(int value, UnitGender unitGender){
-        return "";
-    }
+/**
+ * Преобразователь числа в строку
+ */
+public interface ValueStringer {
+    /**
+     * Получить число прописью
+     * @param value число
+     * @param unitGender род единиц, для которых формируем
+     * @return число прописью
+     */
+    String getString(int value, UnitGender unitGender);
 }

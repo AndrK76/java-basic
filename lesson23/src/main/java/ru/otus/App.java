@@ -7,6 +7,7 @@ import ru.otus.ammount_worder.valuestringer_rus.RussianValueStringer;
 public class App {
     public static void main(String[] args) {
         ValueStringer russianValueStringer = new RussianValueStringer();
+        System.out.println(russianValueStringer.getString(10000004, UnitGender.MALE));
         System.out.println(russianValueStringer.getString(5, UnitGender.MALE));
         System.out.println(russianValueStringer.getString(22, UnitGender.MALE));
         System.out.println(russianValueStringer.getString(356, UnitGender.MALE));

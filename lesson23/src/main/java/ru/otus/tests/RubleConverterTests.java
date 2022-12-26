@@ -58,7 +58,7 @@ public class RubleConverterTests {
         String scenario = testGroup + ": Тест суммы прописью с отрицательным значением";
         try {
             AmmountWorder ammountWorder = new RubleAmmountWorder();
-            Assertions.assertThrows(IllegalArgumentException.class, () -> ammountWorder.showAsNumberString(-2));
+            Assertions.assertThrows(IllegalArgumentException.class, () -> ammountWorder.showAsString(-2));
 
             System.out.printf("\"%s\" passed %n", scenario);
         } catch (Throwable e) {
@@ -85,12 +85,12 @@ public class RubleConverterTests {
                 put(1000, "одна тысяча рублей");
                 put(1001, "одна тысяча один рубль");
                 put(1312103, "один миллион триста двенадцать тысяч сто три рубля");
-                put(10000004, "один миллион триста двенадцать тысяч сто три рубля");
-                put(10000004, "один миллиард четыре рубля");
+                put(10000004, "десять миллионов четыре рубля");
+                put(1000000004, "один миллиард четыре рубля");
             }};
             AmmountWorder ammountWorder = new RubleAmmountWorder();
             for (var val : values.keySet()) {
-                Assertions.assertEquals(values.get(val), ammountWorder.showAsNumberString(val));
+                Assertions.assertEquals(values.get(val), ammountWorder.showAsString(val));
             }
             System.out.printf("\"%s\" passed %n", scenario);
         } catch (Throwable e) {

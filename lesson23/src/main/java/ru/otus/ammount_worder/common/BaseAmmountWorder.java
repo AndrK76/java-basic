@@ -31,8 +31,7 @@ public abstract class BaseAmmountWorder implements AmmountWorder {
      */
     @Override
     public String showAsString(int value) {
-        return "";
-        //return valueStringer.getString(value, unitGender)+ " " + showSuffix(value);
+        return valueStringer.getString(value, unitGender)+ " " + showSuffix(value);
     }
 
     /**
@@ -50,9 +49,9 @@ public abstract class BaseAmmountWorder implements AmmountWorder {
         SuffixRange suffixRange = SuffixRange.getRange(valueForSuffixRange);
         String suffix = caseSuffixes.get(suffixRange);
 
-        //Для значений 11 .. 19 - всегда берём значение во множественном числе
+        //Для значений 10 .. 19 - всегда берём значение во множественном числе
         int remainder100 = value % 100;
-        if (remainder100 > 10 & remainder100 < 20) {
+        if (remainder100 >= 10 & remainder100 < 20) {
             suffix = caseSuffixes.get(SuffixRange.MANY);
         }
         return suffix;

@@ -1,5 +1,6 @@
 package ru.otus;
 
+import ru.otus.tests.ApplicationTest;
 import ru.otus.tests.ConsoleServiceTest;
 import ru.otus.tests.RubleConverterTests;
 import ru.otus.tests.RussianValuesStringerTest;
@@ -10,6 +11,7 @@ public class AppTests {
         testRubleConverterPart1();
         testValueStringers();
         testRubleConverterPart2();
+        testApplication();
     }
 
     public static void testIOService() {
@@ -36,5 +38,10 @@ public class AppTests {
     {
         new RubleConverterTests().testStringsWithNegativeValue();
         new RubleConverterTests().testStringsWithValidValues();
+    }
+
+    public static void testApplication()
+    {
+        new ApplicationTest().run();
     }
 }

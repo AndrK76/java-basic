@@ -6,7 +6,8 @@ import java.util.Map;
 public abstract class BaseAmmountWorder implements AmmountWorder {
 
     protected Map<SuffixRange, String> caseSuffixes;
-
+    protected ValueStringer valueStringer;
+    protected UnitGender unitGender;
     protected BaseAmmountWorder() {
     }
 
@@ -31,6 +32,7 @@ public abstract class BaseAmmountWorder implements AmmountWorder {
     @Override
     public String showAsString(int value) {
         return "";
+        //return valueStringer.getString(value, unitGender)+ " " + showSuffix(value);
     }
 
     /**

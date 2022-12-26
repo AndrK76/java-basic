@@ -9,6 +9,7 @@ public class AppTests {
         testIOService();
         testRubleConverterPart1();
         testValueStringers();
+        testRubleConverterPart2();
     }
 
     public static void testIOService() {
@@ -29,5 +30,11 @@ public class AppTests {
         new RussianValuesStringerTest().testMaleUnitValues();
         new RussianValuesStringerTest().testFemaleUnitValues();
         new RussianValuesStringerTest().testMiddleUnitValues();
+    }
+
+    public static void  testRubleConverterPart2()
+    {
+        new RubleConverterTests().testStringsWithNegativeValue();
+        new RubleConverterTests().testStringsWithValidValues();
     }
 }

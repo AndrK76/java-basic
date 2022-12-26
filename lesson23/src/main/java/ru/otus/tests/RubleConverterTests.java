@@ -54,4 +54,49 @@ public class RubleConverterTests {
         }
     }
 
+    public void testStringsWithNegativeValue() {
+        String scenario = testGroup + ": Тест суммы прописью с отрицательным значением";
+        try {
+            AmmountWorder ammountWorder = new RubleAmmountWorder();
+            Assertions.assertThrows(IllegalArgumentException.class, () -> ammountWorder.showAsNumberString(-2));
+
+            System.out.printf("\"%s\" passed %n", scenario);
+        } catch (Throwable e) {
+            System.err.printf("\"%s\" fails with message \"%s\" %n", scenario, e.getMessage());
+        }
+    }
+
+    public void testStringsWithValidValues() {
+        String scenario = testGroup + ": Тест суммы прописью с валидным значением";
+        try {
+            Map<Integer, String> values = new HashMap<>() {{
+                put(0, "ноль рублей");
+                put(1, "один рубль");
+                put(2, "два рубля");
+                put(3, "три рубля");
+                put(4, "четыре рубля");
+                put(5, "пять рублей");
+                put(8, "восемь рублей");
+                put(10, "десять рублей");
+                put(11, "одиннадцать рублей");
+                put(21, "двадцать один рубль");
+                put(100, "сто рублей");
+                put(101, "сто один рубль");
+                put(1000, "одна тысяча рублей");
+                put(1001, "одна тысяча один рубль");
+                put(1312103, "один миллион триста двенадцать тысяч сто три рубля");
+                put(10000004, "один миллион триста двенадцать тысяч сто три рубля");
+                put(10000004, "один миллиард четыре рубля");
+            }};
+            AmmountWorder ammountWorder = new RubleAmmountWorder();
+            for (var val : values.keySet()) {
+                Assertions.assertEquals(values.get(val), ammountWorder.showAsNumberString(val));
+            }
+            System.out.printf("\"%s\" passed %n", scenario);
+        } catch (Throwable e) {
+            System.err.printf("\"%s\" fails with message \"%s\" %n", scenario, e.getMessage());
+        }
+    }
+
+
 }

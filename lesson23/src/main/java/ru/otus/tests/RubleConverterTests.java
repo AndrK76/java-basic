@@ -1,7 +1,7 @@
 package ru.otus.tests;
 
-import ru.otus.converter.interfaces.Converter;
-import ru.otus.converter.ruble.RubleConverter;
+import ru.otus.ammount_worder.common.AmmountWorder;
+import ru.otus.ammount_worder.ruble.RubleAmmountWorder;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,8 +12,8 @@ public class RubleConverterTests {
     public void testNegativeValue() {
         String scenario = testGroup + ": Тест с отрицательным значением";
         try {
-            Converter converter = new RubleConverter();
-            Assertions.assertThrows(IllegalArgumentException.class, () -> converter.showAsNumberString(-2));
+            AmmountWorder ammountWorder = new RubleAmmountWorder();
+            Assertions.assertThrows(IllegalArgumentException.class, () -> ammountWorder.showAsNumberString(-2));
 
             System.out.printf("\"%s\" passed %n", scenario);
         } catch (Throwable e) {
@@ -44,9 +44,9 @@ public class RubleConverterTests {
                 put(1000, "1000 рублей");
                 put(1001, "1001 рубль");
             }};
-            Converter converter = new RubleConverter();
+            AmmountWorder ammountWorder = new RubleAmmountWorder();
             for (var val : values.keySet()) {
-                Assertions.assertEquals(values.get(val), converter.showAsNumberString(val));
+                Assertions.assertEquals(values.get(val), ammountWorder.showAsNumberString(val));
             }
             System.out.printf("\"%s\" passed %n", scenario);
         } catch (Throwable e) {

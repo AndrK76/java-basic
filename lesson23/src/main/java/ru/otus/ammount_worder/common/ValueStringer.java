@@ -1,4 +1,4 @@
-package ru.otus.converter.common;
+package ru.otus.ammount_worder.common;
 
 /**
  * Преобразователь числа в строку

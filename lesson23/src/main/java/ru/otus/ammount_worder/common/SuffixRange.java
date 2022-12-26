@@ -1,4 +1,4 @@
-package ru.otus.converter.common;
+package ru.otus.ammount_worder.common;
 
 /**
  * Диапазоны для определения суффиксов

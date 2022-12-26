@@ -1,9 +1,9 @@
-package ru.otus.converter.interfaces;
+package ru.otus.ammount_worder.common;
 
 /**
  * Преобразовать число в строку прописью
  */
-public interface Converter {
+public interface AmmountWorder {
     /**
      * Показать число с добавлением единиц
      * @param value число

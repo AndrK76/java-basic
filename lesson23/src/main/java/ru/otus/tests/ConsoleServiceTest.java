@@ -1,6 +1,6 @@
 package ru.otus.tests;
 
-import ru.otus.converter.console.ConsoleIOService;
+import ru.otus.ammount_worder.console.ConsoleIOService;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

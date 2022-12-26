@@ -1,10 +1,10 @@
-package ru.otus.converter.valuestringer_rus;
+package ru.otus.ammount_worder.valuestringer_rus;
 
-import ru.otus.converter.common.BaseConverter;
-import ru.otus.converter.common.SuffixRange;
-import ru.otus.converter.common.UnitGender;
-import ru.otus.converter.common.ValueStringer;
-import ru.otus.converter.interfaces.Converter;
+import ru.otus.ammount_worder.common.BaseAmmountWorder;
+import ru.otus.ammount_worder.common.SuffixRange;
+import ru.otus.ammount_worder.common.UnitGender;
+import ru.otus.ammount_worder.common.ValueStringer;
+import ru.otus.ammount_worder.common.AmmountWorder;
 
 import java.util.HashMap;
 
@@ -13,8 +13,8 @@ import java.util.HashMap;
  */
 public class RussianValueStringer implements ValueStringer {
 
-    private class MilliardConverter extends BaseConverter implements Converter {
-        public MilliardConverter() {
+    private class MilliardAmmountWorder extends BaseAmmountWorder implements AmmountWorder {
+        public MilliardAmmountWorder() {
             super();
             caseSuffixes = new HashMap<>() {{
                 put(SuffixRange.ZERO, "");
@@ -25,8 +25,8 @@ public class RussianValueStringer implements ValueStringer {
         }
     }
 
-    private class MillionConverter extends BaseConverter implements Converter {
-        public MillionConverter() {
+    private class MillionAmmountWorder extends BaseAmmountWorder implements AmmountWorder {
+        public MillionAmmountWorder() {
             super();
             caseSuffixes = new HashMap<>() {{
                 put(SuffixRange.ZERO, "");
@@ -37,8 +37,8 @@ public class RussianValueStringer implements ValueStringer {
         }
     }
 
-    private class ThousendConverter extends BaseConverter implements Converter {
-        public ThousendConverter() {
+    private class ThousendAmmountWorder extends BaseAmmountWorder implements AmmountWorder {
+        public ThousendAmmountWorder() {
             super();
             caseSuffixes = new HashMap<>() {{
                 put(SuffixRange.ZERO, "");
@@ -69,35 +69,35 @@ public class RussianValueStringer implements ValueStringer {
 
         int grp1000 = Math.floorDiv(value, 1000000000) % 1000;
         if (grp1000 != 0) {
-            String valStr = getGroup(grp1000, UnitGender.MALE).trim();
-            Converter conv = new MilliardConverter();
+            String valStr = getGroupString(grp1000, UnitGender.MALE).trim();
+            AmmountWorder conv = new MilliardAmmountWorder();
             ret = (ret + " " + valStr + " " + conv.showSuffix(grp1000)).trim();
         }
 
         int grp100 = Math.floorDiv(value, 1000000) % 1000;
         if (grp100 != 0) {
-            String valStr = getGroup(grp100, UnitGender.MALE).trim();
-            Converter conv = new MillionConverter();
+            String valStr = getGroupString(grp100, UnitGender.MALE).trim();
+            AmmountWorder conv = new MillionAmmountWorder();
             ret = (ret + " " + valStr + " " + conv.showSuffix(grp100)).trim();
         }
 
         int grp10 = Math.floorDiv(value, 1000) % 1000;
         if (grp10 != 0) {
-            String valStr = getGroup(grp10, UnitGender.FEMALE).trim();
-            Converter conv = new ThousendConverter();
+            String valStr = getGroupString(grp10, UnitGender.FEMALE).trim();
+            AmmountWorder conv = new ThousendAmmountWorder();
             ret = (ret + " " + valStr + " " + conv.showSuffix(grp10)).trim();
         }
 
         int grp1 = value % 1000;
         if (grp1 != 0) {
-            String valStr = getGroup(grp1, unitGender).trim();
+            String valStr = getGroupString(grp1, unitGender).trim();
             ret = (ret + " " + valStr).trim();
         }
 
         return ret;
     }
 
-    String getGroup(int value, UnitGender unitGender) {
+    String getGroupString(int value, UnitGender unitGender) {
         if (value >= 10 && value < 20) {
             return getValueFrom10To19(value);
         }

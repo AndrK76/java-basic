@@ -1,8 +1,8 @@
 package ru.otus;
 
-import ru.otus.converter.common.UnitGender;
-import ru.otus.converter.common.ValueStringer;
-import ru.otus.converter.valuestringer_rus.RussianValueStringer;
+import ru.otus.ammount_worder.common.UnitGender;
+import ru.otus.ammount_worder.common.ValueStringer;
+import ru.otus.ammount_worder.valuestringer_rus.RussianValueStringer;
 
 public class App {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package ru.otus.converter.interfaces;
+package ru.otus.ammount_worder.common;
 
 /**
  * Сервис ввода вывода приложения

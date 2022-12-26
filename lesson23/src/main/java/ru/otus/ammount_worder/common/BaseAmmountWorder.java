@@ -1,15 +1,13 @@
-package ru.otus.converter.common;
-
-import ru.otus.converter.interfaces.Converter;
+package ru.otus.ammount_worder.common;
 
 import java.util.Map;
 
 
-public abstract class BaseConverter implements Converter {
+public abstract class BaseAmmountWorder implements AmmountWorder {
 
     protected Map<SuffixRange, String> caseSuffixes;
 
-    protected BaseConverter() {
+    protected BaseAmmountWorder() {
     }
 
     /**

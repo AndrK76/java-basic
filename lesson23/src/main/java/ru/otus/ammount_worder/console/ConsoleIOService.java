@@ -1,8 +1,8 @@
-package ru.otus.converter.console;
+package ru.otus.ammount_worder.console;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import ru.otus.converter.interfaces.IOService;
+import ru.otus.ammount_worder.common.IOService;
 
 import java.io.InputStream;
 import java.io.OutputStream;

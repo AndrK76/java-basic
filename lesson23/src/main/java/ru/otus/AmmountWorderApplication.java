@@ -3,17 +3,26 @@ package ru.otus;
 import ru.otus.ammount_worder.common.AmmountWorder;
 import ru.otus.ammount_worder.common.IOService;
 
-import java.util.Optional;
-
+/**
+ * Приложения переводящее суммы в текстовую строку
+ */
 public class AmmountWorderApplication implements Runnable {
     private final IOService ioService;
     private final AmmountWorder ammountWorder;
 
+    /**
+     * Создать экземпляр приложения
+     * @param ioService сервис ввода/вывода
+     * @param ammountWorder сервис формирования суммы прописью
+     */
     public AmmountWorderApplication(IOService ioService, AmmountWorder ammountWorder) {
         this.ioService = ioService;
         this.ammountWorder = ammountWorder;
     }
 
+    /**
+     * Запустить приложение
+     */
     @Override
     public void run() {
         try {

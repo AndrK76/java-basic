@@ -8,9 +8,14 @@ import ru.otus.ammount_worder.valuestringer_rus.RussianValueStringer;
 
 import java.util.HashMap;
 
-
+/**
+ * Преобразовать число рублей в строку прописью
+ */
 public class RubleAmmountWorder extends BaseAmmountWorder implements AmmountWorder {
 
+    /**
+     * Создать экземпляр преобразователя
+     */
     public RubleAmmountWorder() {
         super();
         super.caseSuffixes = new HashMap<>() {{

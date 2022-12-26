@@ -110,6 +110,7 @@ public class RussianValueStringer implements ValueStringer {
         String grp1Str = getValueFrom1To9(grp1, unitGender);
         String grp10Str = getDecimals(grp10);
         String grp100Str = getHundreds(grp100);
+
         ret = grp100Str;
         int grp11 = grp10 * 10 + grp1;
         if (grp11 >= 10 && grp11 < 20) {

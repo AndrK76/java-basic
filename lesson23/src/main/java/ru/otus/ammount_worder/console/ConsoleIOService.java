@@ -34,7 +34,10 @@ public class ConsoleIOService implements IOService {
      */
     @Override
     public void outputStr(String s) {
-        out.printf("%s%n", s);
+        if (out != null) {
+            out.printf("%s%n", s);
+        }
+
     }
 
     /**
@@ -45,7 +48,9 @@ public class ConsoleIOService implements IOService {
      */
     @Override
     public void outputStr(String template, Object... args) {
-        out.printf(template + "%n", args);
+        if (out != null) {
+            out.printf(template + "%n", args);
+        }
     }
 
     /**

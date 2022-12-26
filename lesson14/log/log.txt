@@ -1,0 +1,74 @@
+D:\Java\jdk-17.0.5\bin\java.exe "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\lib\idea_rt.jar=51658:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\bin" -Dfile.encoding=UTF-8 -classpath D:\Doc\JavaBasic\homework\lesson14\out\production\lesson14 ru.otus.hw.les14.Lesson14
+*** Обработка с выводом сообщений ***
+
+InnerLogic.raiseCheckedException
+Исключение: Нужный файл не найден ,тип ошибки: class java.io.FileNotFoundException
+Stack trace
+ru.otus.hw.les14.InnerLogic.raiseCheckedException(InnerLogic.java:16)
+ru.otus.hw.les14.Lesson14.lambda$testWithShowError$0(Lesson14.java:17)
+ru.otus.hw.les14.ErrorCaller.handleCheckedExceptionAsShow(ErrorCaller.java:25)
+ru.otus.hw.les14.Lesson14.testWithShowError(Lesson14.java:17)
+ru.otus.hw.les14.Lesson14.main(Lesson14.java:5)
+
+InnerLogic.raiseNotCheckedException
+Исключение (runtime): Поздравляю, снова любимая ошибка ,тип ошибки: class java.lang.NullPointerException
+Stack trace
+ru.otus.hw.les14.InnerLogic.raiseNotCheckedException(InnerLogic.java:24)
+ru.otus.hw.les14.Lesson14.lambda$testWithShowError$1(Lesson14.java:20)
+ru.otus.hw.les14.ErrorCaller.handleExceptionAsShow(ErrorCaller.java:13)
+ru.otus.hw.les14.Lesson14.testWithShowError(Lesson14.java:20)
+ru.otus.hw.les14.Lesson14.main(Lesson14.java:5)
+
+InnerLogic.raiseError
+***Ошибка***: ОЗУ не резиновое ,тип ошибки: class java.lang.OutOfMemoryError
+Stack trace
+ru.otus.hw.les14.InnerLogic.raiseError(InnerLogic.java:32)
+ru.otus.hw.les14.Lesson14.lambda$testWithShowError$2(Lesson14.java:25)
+ru.otus.hw.les14.ErrorCaller.handleExceptionAsShow(ErrorCaller.java:13)
+ru.otus.hw.les14.Lesson14.testWithShowError(Lesson14.java:25)
+ru.otus.hw.les14.Lesson14.main(Lesson14.java:5)
+*** Обработка с выбросом ошибки на следующий уровень ***
+
+InnerLogic.raiseCheckedException
+Console Log:
+Исключение (runtime): java.io.FileNotFoundException: Нужный файл не найден ,тип ошибки: class java.lang.RuntimeException
+Причина: java.io.FileNotFoundException: Нужный файл не найден
+Stack trace
+ru.otus.hw.les14.ErrorCaller.reThrowCheckedException(ErrorCaller.java:51)
+ru.otus.hw.les14.Lesson14.testReThrowError(Lesson14.java:36)
+ru.otus.hw.les14.Lesson14.main(Lesson14.java:6)
+
+InnerLogic.raiseNotCheckedException
+Console Log:
+Исключение (runtime): java.lang.NullPointerException: Поздравляю, снова любимая ошибка ,тип ошибки: class java.lang.RuntimeException
+Причина: java.lang.NullPointerException: Поздравляю, снова любимая ошибка
+Stack trace
+ru.otus.hw.les14.ErrorCaller.reThrowException(ErrorCaller.java:39)
+ru.otus.hw.les14.Lesson14.testReThrowError(Lesson14.java:44)
+ru.otus.hw.les14.Lesson14.main(Lesson14.java:6)
+
+InnerLogic.raiseError
+Console Log:
+Исключение (runtime): java.lang.OutOfMemoryError: ОЗУ не резиновое ,тип ошибки: class java.lang.RuntimeException
+Причина: java.lang.OutOfMemoryError: ОЗУ не резиновое
+Stack trace
+ru.otus.hw.les14.ErrorCaller.reThrowException(ErrorCaller.java:39)
+ru.otus.hw.les14.Lesson14.testReThrowError(Lesson14.java:52)
+ru.otus.hw.les14.Lesson14.main(Lesson14.java:6)
+*** Обработка с получением кода возврата ***
+
+InnerLogic.raiseCheckedException
+EXCEPTION_FILENOTFOUNDEXCEPTION
+
+InnerLogic.raiseNotCheckedException
+RUNTIME_EXCEPTION_NULLPOINTEREXCEPTION
+
+InnerLogic.raiseError
+ERROR_OUTOFMEMORYERROR
+
+*** Работа с Try With ***
+inTry: Статус ресурса=true
+inFinally: Статус ресурса=false
+After: Статус ресурса=false
+
+Process finished with exit code 0

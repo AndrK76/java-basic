@@ -1,0 +1,18 @@
+D:\Java\jdk-17.0.5\bin\java.exe "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\lib\idea_rt.jar=54799:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3\bin" -Dfile.encoding=UTF-8 -classpath D:\Doc\JavaBasic\homework\lesson23\out\production\lesson23;D:\Doc\JavaBasic\homework\lesson23\lib\annotations-23.0.0.jar ru.otus.App
+*** Вывод суммы прописью ***
+Введите сумму (целое неотрицательное число):
+12312.22
+Введено некорректное число
+	For input string: "12312.22"
+Введите сумму (целое неотрицательное число):
+-25
+Введено некорректное число
+	Значение не может быть отрицательным
+Введите сумму (целое неотрицательное число):
+2456688
+Результат:
+2456688 рублей
+два миллиона четыреста пятьдесят шесть тысяч шестьсот восемьдесят восемь рублей
+
+
+Process finished with exit code 0
